@@ -5,6 +5,10 @@ async function createTask() {
     title = document.getElementById('title_input').value;
     description = document.getElementById('description_input').value;
     duedate = transformDuedate();
+    await createTaskLoop();
+}
+
+async function createTaskLoop() {
     if (checkMissingInfo(title, description, duedate) == true) {
         getIdFromTasklist();
         if (title && description && category && assignedPeople.length > 0 && duedate && newSelectedPrio) {

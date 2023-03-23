@@ -11,6 +11,7 @@ body::-webkit-scrollbar-thumb {
 .info-content {
     padding-bottom: 40px;
     padding-left: 355px;
+    padding-top: 100px;
 }
 
 .top {

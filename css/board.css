@@ -36,6 +36,10 @@ textarea {
     border-bottom-right-radius: 30px;
 }
 
+.description_alert {
+    display: flex;
+}
+
 .up {
     display: flex;
     justify-content: center;
@@ -219,7 +223,7 @@ textarea {
     height: 31px;
     font-weight: 400;
     font-size: 16px;
-    color: #D1D1D1;
+    color: black;
     border: none;
 }
 
@@ -261,6 +265,7 @@ textarea {
 .subtaskbar {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
 .todofooter {
@@ -329,8 +334,8 @@ textarea {
     background-color: white;
     display: flex;
     width: 30%;
-    min-width: fit-content;
-    min-height: fit-content;
+    min-width: 50vw;
+    min-height: 50vh;
     border-radius: 30px;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     padding: 40px;
@@ -698,6 +703,25 @@ textarea {
     flex-direction: row !important;
 }
 
+.deleteTask {
+    position: absolute;
+    bottom: 0px !important;
+    right: 100px !important;
+    width: 83px;
+    height: 57px;
+    background: #2A3647;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    flex-direction: row !important;
+    color: #fff;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: "Inter", sans-serif;
+}
+
 .subtaskedit {
     display: flex;
     flex-direction: row !important;
@@ -881,6 +905,11 @@ textarea {
 
     .taskbar {
         width: 95vw;
+    }
+
+    .taskform  {
+        min-width: 100vw;
+        min-height: 80vh;
     }
 
     .taskbar_1 {

@@ -144,7 +144,7 @@ function action(formData) {
     let email = document.getElementById("email_signup");
     let user = users.find((u) => u.email == email.value);
     if (user) {
-        const input = "https://alexandrevermeersch.com/send_mail_join/send_mail.php";
+        const input = "https://maximilian-leyh.developerakademie.net/send_mail_join/send_mail.php";
         const requestInit = {
             method: "post",
             body: formData,

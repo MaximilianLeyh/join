@@ -102,7 +102,7 @@ function saveJSONToServer() {
 function determineProxySettings() {
     return '';
 
-    if (window.location.href.indexOf('.alexandrevermeersch.com') > -1) {
+    if (window.location.href.indexOf('.developerakademie.net') > -1) {
         return '';
     } else {
         return 'https://cors-anywhere.herokuapp.com/';

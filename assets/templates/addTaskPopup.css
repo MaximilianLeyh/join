@@ -282,6 +282,7 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     width: 20%;
     justify-content: flex-end;
+    gap: 10px;
 }
 
 .selectet_category {

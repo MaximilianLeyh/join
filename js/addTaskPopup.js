@@ -28,7 +28,7 @@ async function initAddTaskPopup() {
  * Gets "tasklist" from the server
  */
 async function loadTasklistForId() {
-    setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+    setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     tempTasklist = JSON.parse(backend.getItem("tasklist")) || [];
 }
@@ -37,7 +37,7 @@ async function loadTasklistForId() {
  * Gets "contacts" from the server
  */
 async function loadContacts() {
-    setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+    setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     contactList = JSON.parse(backend.getItem("contacts")) || [];
 }
@@ -46,7 +46,7 @@ async function loadContacts() {
  * Gets "categorys" from the server
  */
 async function loadCategorys() {
-    setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+    setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     categorys = JSON.parse(backend.getItem("categorys")) || [{ 'name': 'General Topics', 'color': '#FC71FF' }];
     tempCategorys = JSON.parse(backend.getItem("categorys")) || [{ 'name': 'General Topics', 'color': '#FC71FF' }];

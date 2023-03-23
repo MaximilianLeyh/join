@@ -46,7 +46,7 @@ function saveBoard() {
  * Gets tasklist from server
  */
 async function loadTasklist() {
-    setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+    setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     tasklist = JSON.parse(backend.getItem("tasklist")) || [];
 }
@@ -245,7 +245,7 @@ function findTask(id) {
 }
 
 /**
- * Search funktion
+ * Search function
  * @param {string} search Input of the searchbar
  */
 function searchInTodos(search) {
@@ -261,7 +261,7 @@ function searchInTodos(search) {
 }
 
 /**
- * Search funktion
+ * Search function
  * @param {string} search Input of the searchbar
  */
 function searchInInProgress(search) {
@@ -277,7 +277,7 @@ function searchInInProgress(search) {
 }
 
 /**
- * Search funktion
+ * Search function
  * @param {string} search Input of the searchbar
  */
 function searchInAwaitFeedback(search) {
@@ -293,7 +293,7 @@ function searchInAwaitFeedback(search) {
 }
 
 /**
- * Search funktion
+ * Search function
  * @param {string} search Input of the searchbar
  */
 function searchInDoneTasks(search) {

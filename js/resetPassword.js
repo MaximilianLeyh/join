@@ -4,7 +4,7 @@ let users;
 /**
  * url for backend
  */
-setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
 
 function onPageLoad() {
     email = getEmailUrlParameter();

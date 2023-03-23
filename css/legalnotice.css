@@ -11,6 +11,7 @@ body::-webkit-scrollbar-thumb {
 }
 .legal-notice {
     padding-left: 355px;
+    padding-top: 100px;
 }
 
 .legal-notice a {

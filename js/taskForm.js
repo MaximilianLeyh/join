@@ -2,7 +2,7 @@
  * Gets contacts for further rendering
  */
 async function loadContactsforTasks() {
-    setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+    setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     contacts = JSON.parse(backend.getItem("contacts")) || [];
 }
@@ -57,6 +57,10 @@ function renderEditTask(id) {
     let duedate = year + '-' + month + '-' + day;
     let priority = task[0]['priority'];
     let subtasks = task[0]['subtasks']['tasks'];
+    renderEditTaskTemplate(id,title,description,duedate,priority,subtasks);
+}
+
+function renderEditTaskTemplate(id,title,description,duedate,priority,subtasks) {
     document.getElementById('Boardpopup').innerHTML = editTaskTemplate(id);
     document.getElementById('titleinput').value = title;
     document.getElementById('descriptioninput').value = description;
@@ -212,6 +216,12 @@ function loadAssignetPersons(id) {
 function openDropdownAssignTo(id) {
     task = tasklist.filter(t => t['id'] == id);
     document.getElementById('assign-container').innerHTML = templateOfOpenDropdownAssignTo(id)
+    openDropdownAssignToLoop1(id,);
+    openDropdownAssignToLoop2(id);
+    document.getElementById('assign-container').innerHTML += templateInviteContact(id);
+}
+
+function openDropdownAssignToLoop1(id) {
     for (let i = 0; i < contacts.length; i++) {
         let contact = contacts[i];
         if (checkOnAssignedContacts(contact) != false) {
@@ -220,6 +230,9 @@ function openDropdownAssignTo(id) {
             document.getElementById('assign-container').innerHTML += templateNotAssignedContact(i, contact['name'], contact['icon'], contact['iconcolor'], id);
         }
     }
+}
+
+function openDropdownAssignToLoop2(id) {
     for (let j = 0; j < assignetContacts.length; j++) {
         let contact = assignetContacts[j];
         if (checkOnContact(contact) == false) {
@@ -227,7 +240,6 @@ function openDropdownAssignTo(id) {
             document.getElementById('assign-container').innerHTML += templateAssignedContact(index, contact['name'], contact['icon'], contact['iconcolor'], id);
         }
     }
-    document.getElementById('assign-container').innerHTML += templateInviteContact(id);
 }
 
 /**
@@ -333,6 +345,14 @@ async function editTask(id) {
     let newTitle = document.getElementById('titleinput').value;
     let newDescription = document.getElementById('descriptioninput').value;
     let newDuedate = transformDuedate();
+    await editTaskLoop(newTitle,newDescription,newDuedate,id);
+    tasklist[id]['priority'] = selectedPrio;
+    await saveBoard();
+    setTimeout(await initBoard, 100);
+    closeBoardPopup();
+}
+
+async function editTaskLoop(newTitle,newDescription,newDuedate,id) {
     if (newTitle.length > 2) {
         tasklist[id]['title'] = newTitle;
     }
@@ -343,7 +363,10 @@ async function editTask(id) {
     if (Number.isInteger(newDuedate)) {
         tasklist[id]['duedate'] = newDuedate;
     }
-    tasklist[id]['priority'] = selectedPrio;
+}
+
+async function deleteTask() {
+    tasklist.splice(0, 1);
     await saveBoard();
     setTimeout(await initBoard, 100);
     closeBoardPopup();

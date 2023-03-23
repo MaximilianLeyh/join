@@ -2,6 +2,10 @@
     display: none;
 }
 
+.wrapper_mobile_menu {
+    display: none;
+}
+
 @media (max-width: 1050px) {
     .wrapper-logout-mobile {
         position: absolute;
@@ -12,8 +16,12 @@
         z-index: 999;
     }
 
+    .wrapper_mobile_menu {
+        display: flex;
+    }
+
     .logout-popup-mobile {
-        position: absolute;
+        position: fixed;
         top: 90px;
         background-color: #091931;
         color: white;
@@ -23,7 +31,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        right: 30px;
+        width: 150px;
+        right: 100px;
     }
 
     .logout-popup-mobile a {

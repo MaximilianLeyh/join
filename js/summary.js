@@ -24,13 +24,10 @@ async function summaryInit() {
     loadUrgentTasks();
     loadTotalamount();
     urgentImage();
-    document.getElementById('sidebar_summary_mobile').classList.add('background-color');
-    document.getElementById('sidebar_summary').classList.add('background-color');
-
 }
 
 async function loadTasklistForSummary() {
-    setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+    setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     tasklist = JSON.parse(backend.getItem("tasklist")) || [];
 }

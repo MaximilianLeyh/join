@@ -87,6 +87,7 @@ function editTaskTemplate(id) {
             <div class="assignedpersons" id="assignedpersons"></div>
             </div>
             <div class="editTask" onclick="editTask(${id})"><img src="./assets/img/check-button.png" alt="Ok"></div>
+            <div class="deleteTask, d-none" onclick="deleteTask(${id})">delete</div>
         </div>
         <div class="close" onclick="closeBoardPopup()">x</div>
         

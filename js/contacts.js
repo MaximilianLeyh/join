@@ -33,7 +33,7 @@ let findContact = false;
 /**
  * Url for backend
  */
-setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
 
 /**
  * Loading contacts from backend
@@ -264,8 +264,9 @@ function showContactHtml(contact, i) {
 <div class="contactarea-body-contactinfo">
     <span class="text-contact-info">Contact Information</span>
     <div onclick="openEditContact(${i})" class="edit-link">
-        <img src="./assets/img/pen-blue.png" />
-        <span>Edit Contact</span>
+        <img class="edit-link-image1" src="./assets/img/pen-blue.png" />
+        <img class="edit-link-image2" src="./assets/img/edit-mobile.png" />
+        <span class="edit-link-span" >Edit Contact</span>
     </div>
 </div>
 <div class="contactarea-body-info">

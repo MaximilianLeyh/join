@@ -18,7 +18,7 @@ async function initialize() {
  * Gets "contacts" from the server
  */
 async function loadContacts() {
-    setURL("https://alexandrevermeersch.com/smallest_backend_ever");
+    setURL("https://maximilian-leyh.developerakademie.net/smallest_backend_ever");
     await downloadFromServer();
     contacts = JSON.parse(backend.getItem("contacts")) || [];
 }

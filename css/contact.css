@@ -21,6 +21,7 @@ body::-webkit-scrollbar-thumb {
     padding-right: 32px;
     overflow-y: scroll;
 }
+
 .initials {
     overflow: hidden;
     white-space: nowrap;
@@ -202,6 +203,14 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
+.edit-link-image2 {
+    display: none;
+}
+
+.kanban-span {
+    display: none;
+}
+
 .contact-card-menu-popup {
     background-color: #091931;
     position: absolute;
@@ -234,11 +243,12 @@ body::-webkit-scrollbar-thumb {
 }
 
 .wrapper {
-    position: fixed;
+    position: absolute;
     top: 92px;
     left: 233px;
     height: calc(100vh - 92px);
     box-sizing: border-box;
+    z-index: -1;
 }
 
 .header-contacts {
@@ -248,13 +258,14 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-contactarea {
-    position: fixed;
-    top: 125px;
-    left: 596px;
-    width: calc(100vw - 596px);
-    height: calc(100vh - 92px);
+    position: absolute;
+    top: 50px;
+    left: 350px;
+    width: 600px;
+    height: auto;
     box-sizing: border-box;
-    padding-left: 50px;
+    padding-left: 70px;
+    
 }
 
 .header-contacts h1 {
@@ -286,8 +297,8 @@ body::-webkit-scrollbar-thumb {
     border: none;
     border-radius: 10px;
     position: absolute;
-    bottom: 65px;
-    right: 55px;
+    bottom: 67px;
+    right: 52px;
     cursor: pointer;
 }
 
@@ -616,18 +627,43 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
+@media (max-width: 1400px) {
+    .container-contactarea {
+        left: 350px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-contacts h1 {
+        font-size: 40px;
+    }
+
+    .header-contacts p {
+        font-size: 20px;
+    }
+
+    .contactarea-body-name h3 {
+        font-size: 30px;
+    }
+}
+
+
 @media (max-width: 1050px) {
     .wrapper {
         height: calc(100vh - 184px);
         left: 0px;
     }
 
+    .button-addcontact {
+        bottom: 150px;
+    }
+
     .container-contactarea {
         top: 84px;
         left: 358px;
-        width: calc(100vw - 358px);
-        height: calc(100vh - 150px);
-    }
+        padding-bottom: 200px;
+}
+
 }
 
 @media (max-width: 920px) {
@@ -737,12 +773,48 @@ input::-webkit-inner-spin-button {
         left: 0px;
     }
 
+    .edit-link span {
+        display: none;
+    }
+
+    .kanban-span {
+        display: flex;
+        padding-bottom: 11px;
+        margin: 0px;
+    }
+
+    .horizontal-line {
+        position: absolute;
+        width: 0px;
+        height: 90px;
+        left: 85px;
+        top: 120px;
+        border: 3px solid #29ABE2;
+        transform: rotate(90deg);
+    }
+
+    .contactarea-body-name h3 {
+        font-size: 30px;
+    }
+
+    .header-contacts {
+        flex-direction: column;
+        align-items: start;
+        padding-bottom: 100px;
+    }
+
+    .header-contacts h1 {
+        font-size: 47px;
+        margin: 0px;
+    }
+
     .container-contactarea {
-        top: 84px;
+        top: 33px;
         left: 0px;
         width: 100vw;
         animation: flyIn 225ms ease-in;
         padding-left: 50px;
+        width: 80vw;
     }
 
     .initials-contact-body {
@@ -753,6 +825,18 @@ input::-webkit-inner-spin-button {
         width: 100vw;
         box-sizing: border-box;
         padding-top: 60px;
+        padding-bottom: 150px;
+    }
+
+    .edit-link-image2 {
+        display: flex;
+        position: absolute;
+        top: 500px;
+        right: 0px;
+    }
+
+    .edit-link-image1 {
+        display: none;
     }
 
     @keyframes flyIn {
@@ -766,7 +850,6 @@ input::-webkit-inner-spin-button {
 
     .container-button-mobile {
         display: flex;
-        background-color: white;
         width: 100vw;
         height: 60px;
         box-sizing: border-box;
@@ -814,8 +897,8 @@ input::-webkit-inner-spin-button {
     .close-contact-mobile {
         display: flex;
         position: absolute;
-        bottom: 40px;
-        right: 40px;
+        top: 50px;
+        right: 0px;
         cursor: pointer;
     }
 
@@ -824,14 +907,39 @@ input::-webkit-inner-spin-button {
     }
 }
 
-@media (max-width: 470px) {
-    .container-contactarea {
-        padding-left: 15px;
+@media (max-width: 470px) { 
+
+    h1 {
+        margin: 0px;
+        padding-bottom: 20px;
+    }
+
+    .close-contact-mobile {
+        top: 40px;
+    }
+
+    .horizontal-line {
+        position: absolute;
+        width: 0px;
+        height: 90px;
+        left: 70px;
+        top: 100px;
+        
+    }
+
+    p {
+        margin: 0px;
     }
 
     .contactarea-body-name h3 {
-        font-size: 32px;
+        font-size: 20px;
     }
+    .container-contactarea {
+        top: 33px;
+        padding-left: 33px;
+        box-sizing: unset;
+    }
+
     .contactarea-body-info {
         margin-top: 20px;
     }
